@@ -1,1 +1,14 @@
+#container {
+  background-color: rgb(220,220,220);
+  border: 1px solid red;
+  width: auto;
+  height: 400px;
+}
 
+.gridSquare {
+  background-color: blue;
+  border: 1px solid green;
+  width: 15px;
+  height: 10px;
+  margin: 2px;
+}
