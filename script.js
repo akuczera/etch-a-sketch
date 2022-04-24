@@ -7,6 +7,7 @@ function buildGrid(x) {
 //Add etch-a-sketch container for all squares, set id attribute
 const sketchContainer = document.createElement("div");
 sketchContainer.setAttribute("id", "container");
+  sketchContainer.className = "grid";
 console.log(sketchContainer.id);
 body.appendChild(sketchContainer);
 var sketchSquare;
