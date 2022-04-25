@@ -19,14 +19,13 @@ var sketchSquare;
     sketchSquare.className = "gridSquare";
     console.log(sketchSquare.className);
     sketchContainer.appendChild(sketchSquare);
-    
   }
 }
 
 buildGrid(gridSize);
 
 //Hover effect that changes the color of each div when a use hovers over the div.
-const div = document.getElementsByClassName("gridSquare");
+const div = document.querySelectorAll("div.gridSquare");
 
 div.forEach(div => div.addEventListener("mouseover", () => {
   div.className = "changeColor";
