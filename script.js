@@ -25,8 +25,19 @@ var sketchSquare;
 buildGrid(gridSize);
 
 //Hover effect that changes the color of each div when a use hovers over the div.
-const div = document.querySelectorAll("div.gridSquare");
+var div = document.querySelectorAll("div.gridSquare");
 
 div.forEach(div => div.addEventListener("mouseover", () => {
   div.className = "changeColor";
 }));
+
+//Reset button to clear the colors in the gridSquares
+const clearButton = document.querySelector("#clear");
+
+clearButton.addEventListener("click", () => {
+  console.log("clear!");
+  var clearDiv = document.querySelectorAll("div.changeColor");
+  clearDiv.forEach(element => {
+    element.classList.toggle("changeColor");
+    element.className = "gridSquare";
+  })});
