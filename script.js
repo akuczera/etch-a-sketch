@@ -24,7 +24,7 @@ var sketchSquare;
 buildGrid(gridSize);
 
 //Hover effect that changes the color of each div when a use hovers over the div.
-let div = document.querySelectorAll("div.gridSquare");
+var div = document.querySelectorAll("div.gridSquare");
 
 div.forEach(div => div.addEventListener("mouseover", () => {
   div.className = "changeColor";
@@ -54,9 +54,12 @@ gridButton.addEventListener("click", () => {
     userInput = parseInt(prompt("Please try again. Enter 1 - 100"));
   } else {
     console.log(userInput);
-    gridSize = userInput;
+    gridSize = userInput * userInput;
     console.log(gridSize);
+
+    //var percCalc = mathRound((gridSize/100));
+    //console.log(percCalc);
+    
     buildGrid(gridSize);
-    break;
   }
 }});

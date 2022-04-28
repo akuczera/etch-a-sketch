@@ -1,13 +1,17 @@
+:root {
+  --percent: 25%;
+}
+
 #container {
   background-color: rgb(220,220,220);
   border: 1px solid red;
-  width: 400px;;
-  height: 400px;
+  width: 1000px;;
+  height: 1000px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 25%);
+  grid-template-columns: repeat(auto-fit, var(--percent));
 }
 
 .gridSquare {
