@@ -2,6 +2,8 @@
 //Get access to <body> of HTML.
 const body = document.body;
 var gridSize = 16;
+var root = document.querySelector(":root");
+
 
 //Add etch-a-sketch container for all squares, set id attribute.
 const sketchContainer = document.createElement("div");
@@ -23,12 +25,17 @@ var sketchSquare;
 
 buildGrid(gridSize);
 
+
 //Hover effect that changes the color of each div when a use hovers over the div.
+function hoverChange() {
 var div = document.querySelectorAll("div.gridSquare");
 
-div.forEach(div => div.addEventListener("mouseover", () => {
-  div.className = "changeColor";
+div.forEach(div =>       div.addEventListener("mouseover", () => {
+div.className = "changeColor";
 }));
+}
+
+hoverChange();
 
 //Reset button to clear the colors in the gridSquares.
 const clearButton = document.querySelector("#clear");
@@ -44,22 +51,20 @@ clearButton.addEventListener("click", () => {
 let gridButton = document.querySelector("#gridSize");
 
 gridButton.addEventListener("click", () => {
-  console.log("Changing grid size!");
   let userInput;
   
   while(true) {
-  userInput = parseInt(prompt("How many squares would you like? Enter 1 - 100"));
+  userInput = parseInt(prompt("How many columns would you like? Enter 1 - 100"));
  
   if (userInput < 1 || userInput > 100) {
     userInput = parseInt(prompt("Please try again. Enter 1 - 100"));
   } else {
-    console.log(userInput);
     gridSize = userInput * userInput;
-    console.log(gridSize);
-
-    //var percCalc = mathRound((gridSize/100));
-    //console.log(percCalc);
-    
+    let percCalc = (1/userInput) * 100;
+    var perc = percCalc + '%';
+    root.style.setProperty("--percent", perc);
     buildGrid(gridSize);
+    hoverChange();
+    return;
   }
 }});
