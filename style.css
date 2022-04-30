@@ -16,11 +16,22 @@
 
 .gridSquare {
   width: 100%;
-  background-color: blanchedalmond;
+  background-color: rgb(211,211,211);
   border: 1px solid black;
 }
 
 .changeColor {
   background-color: blueviolet;
   border: 1px solid black;
+
+}
+
+.trailColor {
+  background-color: rgb(211,211,211);
+  border: 1px solid black;
+  transition: all 0.2s ease;
+}
+
+.trailColor:hover {
+  background-color: rgb(189, 189, 189);
 }

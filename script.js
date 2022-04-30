@@ -1,7 +1,7 @@
 
 //Get access to <body> of HTML.
 const body = document.body;
-var gridSize = 16;
+var gridSize = 50;
 var root = document.querySelector(":root");
 
 
@@ -25,17 +25,25 @@ var sketchSquare;
 
 buildGrid(gridSize);
 
+//Hover effect to crate trailing hover tail.
+function hoverTrail() {
+var div = document.querySelectorAll("div.gridSquare");
+
+div.forEach(div => div.addEventListener("mouseover", () => {
+div.className = "trailColor";
+}));
+}
+
+hoverTrail();
 
 //Hover effect that changes the color of each div when a use hovers over the div.
 function hoverChange() {
 var div = document.querySelectorAll("div.gridSquare");
 
-div.forEach(div =>       div.addEventListener("mouseover", () => {
+div.forEach(div => div.addEventListener("mouseover", () => {
 div.className = "changeColor";
 }));
 }
-
-hoverChange();
 
 //Reset button to clear the colors in the gridSquares.
 const clearButton = document.querySelector("#clear");
@@ -64,7 +72,7 @@ gridButton.addEventListener("click", () => {
     var perc = percCalc + '%';
     root.style.setProperty("--percent", perc);
     buildGrid(gridSize);
-    hoverChange();
+    hoverTrail();
     return;
   }
 }});
