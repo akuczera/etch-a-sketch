@@ -3,8 +3,6 @@
 }
 
 #container {
-  background-color: rgb(220,220,220);
-  border: 1px solid red;
   width: 1000px;;
   height: 1000px;
 }
@@ -17,18 +15,20 @@
 .gridSquare {
   width: 100%;
   background-color: rgb(211,211,211);
-  border: 1px solid black;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .changeColor {
   background-color: blueviolet;
-  border: 1px solid black;
-
+  border-left: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .trailColor {
   background-color: rgb(211,211,211);
-  border: 1px solid black;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
   transition: all 0.2s ease;
 }
 
