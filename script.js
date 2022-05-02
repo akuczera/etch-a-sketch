@@ -1,23 +1,19 @@
 
 //Get access to <body> of HTML.
 const body = document.body;
+var container = document.getElementById('container');
 var gridSize = 625;  //Auto grid size
 var root = document.querySelector(":root");
 var sketchSquare;
 
-//Add etch-a-sketch container for all squares, set id attribute.
-const sketchContainer = document.createElement("div");
-sketchContainer.setAttribute("id", "container");
-sketchContainer.className = "grid";
-body.appendChild(sketchContainer);
-
+//Build grid squares and append to container div
 function buildGrid(x) {
-sketchContainer.replaceChildren();
+container.replaceChildren();
 //This loop builds our grid.
   for (var i=0; i < x; i++) {
     sketchSquare = document.createElement("div");
     sketchSquare.className = "gridSquare";
-    sketchContainer.appendChild(sketchSquare);
+    container.appendChild(sketchSquare);
   }
 }
 
