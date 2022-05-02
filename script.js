@@ -3,7 +3,7 @@
 const body = document.body;
 var gridSize = 625;  //Auto grid size
 var root = document.querySelector(":root");
-
+var sketchSquare;
 
 //Add etch-a-sketch container for all squares, set id attribute.
 const sketchContainer = document.createElement("div");
@@ -13,8 +13,6 @@ body.appendChild(sketchContainer);
 
 function buildGrid(x) {
 sketchContainer.replaceChildren();
-var sketchSquare;
-
 //This loop builds our grid.
   for (var i=0; i < x; i++) {
     sketchSquare = document.createElement("div");
@@ -23,30 +21,26 @@ var sketchSquare;
   }
 }
 
+//Run buildGrid function
 buildGrid(gridSize);
 
 //Hover effect to crate trailing hover tail so user can see what square their mouse is hovering over.
 function hoverTrail() {
 var div = document.querySelectorAll("div.gridSquare");
-
 div.forEach(div => div.addEventListener("mouseover", () => {
 div.className = "trailColor";
-}));
+clickChange();
+}))};
 
-div.forEach(div => div.addEventListener("click", () => {
-div.className = "changeColor";
-}));
-}
 
+//Run hoverTrail function
 hoverTrail();
 
-//Hover effect that changes the color of each div when a use hovers over the div.
+
+//Color change effect that changes the color of each div when a use clicks mouse over the div.
 function clickChange() {
 var div = document.querySelectorAll("div.gridSquare");
-
-div.forEach(div => div.addEventListener("mouseover", () => {
-div.className = "changeColor";
-}));
+div.forEach(div => div.addEventListener("click", () => {div.target.style.backgroundColor = "rgb(148, 38, 226)";}))
 }
 
 //Reset button to clear the colors in the gridSquares.
