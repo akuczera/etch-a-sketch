@@ -1,7 +1,7 @@
 
 //Get access to <body> of HTML.
 const body = document.body;
-var gridSize = 50;
+var gridSize = 625;  //Auto grid size
 var root = document.querySelector(":root");
 
 
@@ -25,19 +25,23 @@ var sketchSquare;
 
 buildGrid(gridSize);
 
-//Hover effect to crate trailing hover tail.
+//Hover effect to crate trailing hover tail so user can see what square their mouse is hovering over.
 function hoverTrail() {
 var div = document.querySelectorAll("div.gridSquare");
 
 div.forEach(div => div.addEventListener("mouseover", () => {
 div.className = "trailColor";
 }));
+
+div.forEach(div => div.addEventListener("click", () => {
+div.className = "changeColor";
+}));
 }
 
 hoverTrail();
 
 //Hover effect that changes the color of each div when a use hovers over the div.
-function hoverChange() {
+function clickChange() {
 var div = document.querySelectorAll("div.gridSquare");
 
 div.forEach(div => div.addEventListener("mouseover", () => {
@@ -55,7 +59,7 @@ clearButton.addEventListener("click", () => {
     element.className = "gridSquare";
   })});
 
-//Grid size button that asks user how large to make the etch-a-sketch grid.
+//Grid-size button that asks user how large to make the etch-a-sketch grid.
 let gridButton = document.querySelector("#gridSize");
 
 gridButton.addEventListener("click", () => {
