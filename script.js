@@ -28,10 +28,11 @@ hoverTrail();
 
 
 //Color change effect that changes the color of each div when a use clicks mouse over the div.
-function clickChange() {
-var div = document.querySelectorAll("div.gridSquare");
-div.forEach(div => div.addEventListener("click", () => {div.target.style.backgroundColor = "rgb(148, 38, 226)";}))
-}
+//function clickChange() {
+//var div = document.querySelectorAll("div.gridSquare");
+//div.forEach(div => div.addEventListener("click", () => //{div.target.style.backgroundColor = "rgb(148, 38, 226)";}))
+//}
+
 
 //Reset button to clear the colors in the gridSquares.
 const clearButton = document.querySelector("#clear");
