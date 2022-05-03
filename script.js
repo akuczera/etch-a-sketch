@@ -35,24 +35,21 @@ clickChange();
 
 //Clear button, clears all colors from the grid
 const clearButton = document.querySelector("#clear");
-const clearDiv = document.querySelectorAll("div.changeColor");
 
-clearDiv.forEach(element => {element.classList.toggle("changeColor");
 clearButton.addEventListener("click", () => {
-  
-  
-    element.className = "gridSquare";
+  var clearDiv = document.querySelectorAll("div.changeColor");
+  clearDiv.forEach(element => {
+  element.className = "gridSquare";
   })});
 
+
 //Grid-size button that asks user how large to make the etch-a-sketch grid.
-let gridButton = document.querySelector("#gridSize");
+const gridButton = document.querySelector("#gridSize");
 
 gridButton.addEventListener("click", () => {
-  let userInput;
-  
+let userInput;
   while(true) {
-  userInput = parseInt(prompt("How many columns would you like? Enter 1 - 100"));
- 
+    userInput = parseInt(prompt("How many columns would you like? Enter 1 - 100"));
   if (userInput < 1 || userInput > 100) {
     userInput = parseInt(prompt("Please try again. Enter 1 - 100"));
   } else {
@@ -62,6 +59,7 @@ gridButton.addEventListener("click", () => {
     root.style.setProperty("--percent", perc);
     buildGrid(gridSize);
     hoverTrail();
+    clickChange();
     return;
   }
 }});
