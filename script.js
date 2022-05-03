@@ -9,11 +9,10 @@ var sketchSquare;
 //Build grid squares and append to container div
 function buildGrid(x) {
 container.replaceChildren();
-//This loop builds our grid.
   for (var i=0; i < x; i++) {
-    sketchSquare = document.createElement("div");
-    sketchSquare.className = "gridSquare";
-    container.appendChild(sketchSquare);
+    gridSquare = document.createElement("div");
+    gridSquare.classList.add("gridSquare");
+    container.appendChild(gridSquare);
   }
 }
 
