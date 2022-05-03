@@ -3,6 +3,7 @@ var container = document.getElementById('container');
 var gridSize = 625;  //Auto grid size
 var root = document.querySelector(":root");
 
+
 //Build grid squares and append to container div
 function buildGrid(x) {
 container.replaceChildren();
@@ -14,33 +15,32 @@ container.replaceChildren();
 }
 buildGrid(gridSize);
 
-//Hover effect to crate trailing hover tail so user can see what square their mouse is hovering over.
+//const square = document.querySelectorAll("div.gridSquare");
+//square.forEach(div => div.addEventListener("mouseover", hoverTrail(div)));
+
 function hoverTrail() {
-var square = document.querySelectorAll("div.gridSquare");
-square.forEach(square => square.addEventListener("mouseover", () => {
-square.classList.add("trailColor");//= "trailColor";
-clickChange();
-}))};
-
-
-//Run hoverTrail function
+const square = document.querySelectorAll("div.gridSquare");
+square.forEach(div => div.addEventListener("mouseover", () => {
+  div.classList.add("trailColor");}))
+}
 hoverTrail();
 
-
 //Color change effect that changes the color of each div when a use clicks mouse over the div.
-//function clickChange() {
-//var div = document.querySelectorAll("div.gridSquare");
-//div.forEach(div => div.addEventListener("click", () => //{div.target.style.backgroundColor = "rgb(148, 38, 226)";}))
-//}
+function clickChange() {
+const div = document.querySelectorAll("div.gridSquare");
+div.forEach(div => div.addEventListener("click", () => {
+  div.classList.add("changeColor");}))
+}
+clickChange();
 
-
-//Reset button to clear the colors in the gridSquares.
+//Clear button, clears all colors from the grid
 const clearButton = document.querySelector("#clear");
+const clearDiv = document.querySelectorAll("div.changeColor");
 
+clearDiv.forEach(element => {element.classList.toggle("changeColor");
 clearButton.addEventListener("click", () => {
-  let clearDiv = document.querySelectorAll("div.changeColor");
-  clearDiv.forEach(element => {
-    element.classList.toggle("changeColor");
+  
+  
     element.className = "gridSquare";
   })});
 
