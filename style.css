@@ -19,12 +19,6 @@
   border-top: 1px solid black;
 }
 
-.changeColor {
-  background-color: blueviolet;
-  border-left: 1px solid black;
-  border-top: 1px solid black;
-}
-
 .trailColor {
   background-color: rgb(211,211,211);
   border-left: 1px solid black;
@@ -34,4 +28,10 @@
 
 .trailColor:hover {
   background-color: rgb(158, 158, 158);
+}
+
+.changeColor {
+  background-color: blueviolet;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
 }

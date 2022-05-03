@@ -1,10 +1,7 @@
 
-//Get access to <body> of HTML.
-const body = document.body;
 var container = document.getElementById('container');
 var gridSize = 625;  //Auto grid size
 var root = document.querySelector(":root");
-var sketchSquare;
 
 //Build grid squares and append to container div
 function buildGrid(x) {
@@ -15,15 +12,13 @@ container.replaceChildren();
     container.appendChild(gridSquare);
   }
 }
-
-//Run buildGrid function
 buildGrid(gridSize);
 
 //Hover effect to crate trailing hover tail so user can see what square their mouse is hovering over.
 function hoverTrail() {
-var div = document.querySelectorAll("div.gridSquare");
-div.forEach(div => div.addEventListener("mouseover", () => {
-div.className = "trailColor";
+var square = document.querySelectorAll("div.gridSquare");
+square.forEach(square => square.addEventListener("mouseover", () => {
+square.classList.add("trailColor");//= "trailColor";
 clickChange();
 }))};
 
