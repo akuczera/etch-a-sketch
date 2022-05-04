@@ -36,6 +36,7 @@ function mouseDown() {
     const square = document.querySelectorAll("div.gridSquare");
   square.forEach((div) => {
     div.addEventListener('click', () => {
+    div.classList.add("changeColor");
     mousedown = !mousedown;
   });
   });
@@ -55,17 +56,26 @@ clearButton.addEventListener("click", () => {
 const gridButton = document.querySelector("#gridSize");
 
 gridButton.addEventListener("click", () => {
+  
 mousedown = false;
 let userInput;
- // while(true) {
-    userInput = parseInt(prompt("How many columns would you like? Enter 1 - 100"));
-  if (userInput < 1 || userInput > 100) {
-    userInput = parseInt(prompt("Please try again. Enter 1 - 100"));
-  } else {
+let isValid = false;
+
+  do{
+    userInput = prompt("How many columns would you like? Enter 1 - 100");
+    if (userInput === null) break;
+
+    userInput = parseInt(userInput);
+    isValid = userInput >= 1 && userInput <= 100;
+    
+  if (isValid) {
     gridSize = userInput * userInput;
     let percCalc = ((1/userInput) * 100) + '%';
     root.style.setProperty("--percent", percCalc);
+  } else {
+    userInput = parseInt(prompt("Please try again. Enter 1 - 100"));
   }
-  buildGrid(gridSize);
-//}
+} while (!isValid);
+  
+buildGrid(gridSize);
 });
