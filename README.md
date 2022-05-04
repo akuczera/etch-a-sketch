@@ -7,4 +7,5 @@ What I learned with this project:
 - CSS variables:
     - https://stackoverflow.com/questions/49402471/how-to-use-javascript-variables-in-css
     - https://www.w3.org/TR/css-variables/
-- Had to remember that the web page will render the CSS class that is closest to the bottom of the file. 
+- Had to remember that the web page will render the CSS class that is closest to the bottom of the file.
+- Toggle a variable: https://www.codegrepper.com/code-examples/javascript/javascript+toggle+variable

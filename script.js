@@ -3,8 +3,7 @@ var container = document.getElementById('container');
 var gridSize = 625;  //Auto grid size
 var root = document.querySelector(":root");
 
-
-//Build grid squares and append to container div
+//Build grid squares and append to container div.
 function buildGrid(x) {
 container.replaceChildren();
   for (var i=0; i < x; i++) {
@@ -15,32 +14,30 @@ container.replaceChildren();
 }
 buildGrid(gridSize);
 
-//const square = document.querySelectorAll("div.gridSquare");
-//square.forEach(div => div.addEventListener("mouseover", hoverTrail(div)));
-
-function hoverTrail() {
 const square = document.querySelectorAll("div.gridSquare");
-square.forEach(div => div.addEventListener("mouseover", () => {
+
+//function that creates trail behind mouse so user can see where they are clicking.
+function hoverTrail() {
+  square.forEach(div => div.addEventListener("mouseover", () => {
   div.classList.add("trailColor");}))
 }
 hoverTrail();
 
 //Color change effect that changes the color of each div when a use clicks mouse over the div.
 function clickChange() {
-const div = document.querySelectorAll("div.gridSquare");
-div.forEach(div => div.addEventListener("click", () => {
+  square.forEach(div => div.addEventListener("click", () => {
   div.classList.add("changeColor");}))
 }
 clickChange();
 
-//Clear button, clears all colors from the grid
+//Clear button, clears all colors from the grid.
 const clearButton = document.querySelector("#clear");
 
 clearButton.addEventListener("click", () => {
   var clearDiv = document.querySelectorAll("div.changeColor");
   clearDiv.forEach(element => {
   element.className = "gridSquare";
-  })});
+})});
 
 
 //Grid-size button that asks user how large to make the etch-a-sketch grid.
