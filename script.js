@@ -2,6 +2,7 @@
 var container = document.getElementById('container');
 var gridSize = 625;  //Auto grid size
 var root = document.querySelector(":root");
+let mousedown = false;
 
 //Build grid squares and append to container div.
 function buildGrid(x) {
@@ -11,28 +12,34 @@ container.replaceChildren();
     gridSquare.classList.add("gridSquare");
     container.appendChild(gridSquare);
   }
+  hover();
+  mouseDown();
 }
 buildGrid(gridSize);
 
-const square = document.querySelectorAll("div.gridSquare");
-
 //Create hover trail effect with mouseover event
-square.forEach((div) => {
-  div.addEventListener('mouseover', () => {
-  if(mousedown === false) { 
-  div.classList.add("trailColor");
-  } else if (mousedown === true) {
-    div.classList.add("changeColor");
-  }
-});
-});
+function hover() {
+  const square = document.querySelectorAll("div.gridSquare");
+  square.forEach((div) => {
+    div.addEventListener('mouseover', () => {
+    if(mousedown === false) { 
+    div.classList.add("trailColor");
+    } else if (mousedown === true) {
+      div.classList.add("changeColor");
+    }
+  });
+  });
+}
 
 //Change background with click event
-square.forEach((div) => {
-  div.addEventListener('click', () => {
-  mousedown = !mousedown;
-});
-});
+function mouseDown() {
+    const square = document.querySelectorAll("div.gridSquare");
+  square.forEach((div) => {
+    div.addEventListener('click', () => {
+    mousedown = !mousedown;
+  });
+  });
+}
 
 //Clear button, clears all colors from the grid.
 const clearButton = document.querySelector("#clear");
@@ -48,19 +55,17 @@ clearButton.addEventListener("click", () => {
 const gridButton = document.querySelector("#gridSize");
 
 gridButton.addEventListener("click", () => {
+mousedown = false;
 let userInput;
-  while(true) {
+ // while(true) {
     userInput = parseInt(prompt("How many columns would you like? Enter 1 - 100"));
   if (userInput < 1 || userInput > 100) {
     userInput = parseInt(prompt("Please try again. Enter 1 - 100"));
   } else {
     gridSize = userInput * userInput;
-    let percCalc = (1/userInput) * 100;
-    var perc = percCalc + '%';
-    root.style.setProperty("--percent", perc);
-    buildGrid(gridSize);
-    hoverTrail();
-    clickChange();
-    return;
+    let percCalc = ((1/userInput) * 100) + '%';
+    root.style.setProperty("--percent", percCalc);
   }
-}});
+  buildGrid(gridSize);
+//}
+});
