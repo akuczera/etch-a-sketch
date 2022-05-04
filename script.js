@@ -16,12 +16,16 @@ buildGrid(gridSize);
 
 const square = document.querySelectorAll("div.gridSquare");
 
-//function that creates trail behind mouse so user can see where they are clicking.
-function hoverTrail() {
-  square.forEach(div => div.addEventListener("mouseover", () => {
-  div.classList.add("trailColor");}))
-}
-hoverTrail();
+//Create hover trail effect with mouseover event
+square.forEach((div) => {
+  div.addEventListener('mouseover', () => {
+  if(mousedown === false) { 
+  div.classList.add("trailColor");
+  } else if (mousedown === true) {
+    div.classList.add("changeColor");
+  }
+});
+});
 
 //Color change effect that changes the color of each div when a use clicks mouse over the div.
 function clickChange() {
