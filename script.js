@@ -27,12 +27,12 @@ square.forEach((div) => {
 });
 });
 
-//Color change effect that changes the color of each div when a use clicks mouse over the div.
-function clickChange() {
-  square.forEach(div => div.addEventListener("click", () => {
-  div.classList.add("changeColor");}))
-}
-clickChange();
+//Change background with click event
+square.forEach((div) => {
+  div.addEventListener('click', () => {
+  mousedown = !mousedown;
+});
+});
 
 //Clear button, clears all colors from the grid.
 const clearButton = document.querySelector("#clear");
