@@ -3,6 +3,7 @@ var container = document.getElementById('container');
 var gridSize = 625;  //Auto grid size
 var root = document.querySelector(":root");
 let mousedown = false;
+let surprise = false;
 
 //Build grid squares and append to container div.
 function buildGrid(x) {
@@ -25,7 +26,8 @@ function hover() {
     if(mousedown === false) { 
     div.classList.add("trailColor");
     } else if (mousedown === true) {
-      div.classList.add("changeColor");
+      //div.classList.add("changeColor");
+      div.style.backgroundColor = "black"; 
     }
   });
   });
@@ -36,11 +38,15 @@ function mouseDown() {
     const square = document.querySelectorAll("div.gridSquare");
   square.forEach((div) => {
     div.addEventListener('click', () => {
-    div.classList.add("changeColor");
+    //div.classList.add("changeColor");
+    div.style.backgroundColor = "black";
     mousedown = !mousedown;
   });
   });
 }
+
+//Surprise button, changes background color to random color.
+const surpriseButton = document.querySelector("#random");
 
 //Clear button, clears all colors from the grid.
 const clearButton = document.querySelector("#clear");
