@@ -48,6 +48,10 @@ function mouseDown() {
 //Surprise button, changes background color to random color.
 const surpriseButton = document.querySelector("#random");
 
+surpriseButton.addEventListener("click", () => {
+  surprise != surprise;
+})
+
 //Clear button, clears all colors from the grid.
 const clearButton = document.querySelector("#clear");
 
