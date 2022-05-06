@@ -23,7 +23,7 @@ function hover() {
   const square = document.querySelectorAll("div.gridSquare");
   square.forEach((div) => {
     div.addEventListener('mouseover', () => {
-    if(mousedown === false && surprise === false) { 
+    if((mousedown === false && surprise === false) || (mousedown === true && surprise === true)) { 
     div.classList.add("trailColor");
     } else if (mousedown === true && surprise === false) {
       //div.classList.add("changeColor");
@@ -42,9 +42,8 @@ function hover() {
 //Change background with click event
 function mouseDown() {
     const square = document.querySelectorAll("div.gridSquare");
-  square.forEach((div) => {
+    square.forEach((div) => {
     div.addEventListener('click', () => {
-    div.style.backgroundColor = "black";
     mousedown = !mousedown;
   });
   });
@@ -53,18 +52,15 @@ function mouseDown() {
 //Surprise button, changes background color to random color.
 const surpriseButton = document.querySelector("#random");
 surpriseButton.addEventListener("click", () => {
-  surprise != surprise;
+  mousedown = !mousedown;
+  surprise = !surprise;
 });
 
-//Clear button, clears all colors from the grid.
+//Clear button, rebuilds grid to "clear it"
 const clearButton = document.querySelector("#clear");
-
 clearButton.addEventListener("click", () => {
-  var clearDiv = document.querySelectorAll("div.changeColor");
-  clearDiv.forEach(element => {
-  element.className = "gridSquare";
-})});
-
+  buildGrid(gridSize);
+});
 
 //Grid-size button that asks user how large to make the etch-a-sketch grid.
 const gridButton = document.querySelector("#gridSize");
