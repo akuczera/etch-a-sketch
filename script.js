@@ -23,11 +23,17 @@ function hover() {
   const square = document.querySelectorAll("div.gridSquare");
   square.forEach((div) => {
     div.addEventListener('mouseover', () => {
-    if(mousedown === false) { 
+    if(mousedown === false && surprise === false) { 
     div.classList.add("trailColor");
-    } else if (mousedown === true) {
+    } else if (mousedown === true && surprise === false) {
       //div.classList.add("changeColor");
       div.style.backgroundColor = "black"; 
+    } else if (mousedown === false && surprise === true) {
+        function random(number) {
+        return Math.floor(Math.random() * (number+1));
+        }
+      const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+      div.style.backgroundColor = rndCol;
     }
   });
   });
@@ -38,7 +44,6 @@ function mouseDown() {
     const square = document.querySelectorAll("div.gridSquare");
   square.forEach((div) => {
     div.addEventListener('click', () => {
-    //div.classList.add("changeColor");
     div.style.backgroundColor = "black";
     mousedown = !mousedown;
   });
@@ -47,10 +52,9 @@ function mouseDown() {
 
 //Surprise button, changes background color to random color.
 const surpriseButton = document.querySelector("#random");
-
 surpriseButton.addEventListener("click", () => {
   surprise != surprise;
-})
+});
 
 //Clear button, clears all colors from the grid.
 const clearButton = document.querySelector("#clear");
