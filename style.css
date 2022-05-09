@@ -17,12 +17,12 @@ html {
 button {
   background-color: #F1F3CE;
   text-align: center;
-  width: 120px;
-  height: 60px;
+  width: 100px;
+  height: 50px;
   font-size: 18px;
-  border-radius: 8px;
+  border-radius: 4px;
   border-color: black;
-  margin: 0 30px;
+  margin: 0 20px;
 }
 
 button:hover {
@@ -36,11 +36,11 @@ button:hover {
 }
 
 #container {
-  width: 700px;
-  height: 700px;
+  width: 500px;
+  height: 500px;
   border-right: 0.5px solid rgb(158, 158, 158);
   border-bottom: 0.5px solid rgb(158, 158, 158);
-  margin: 40px auto 40px auto;
+  margin: 40px auto 30px auto;
 }
 
 .grid {
