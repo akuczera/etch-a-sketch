@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: linear-gradient(-45deg, #F62A00, #00293C);
+  background-color: #1E656D;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,13 +11,28 @@ body {
 
 html {
   height: 100%;
+  font-family: Verdanna, Tahoma;
 }
 
 button {
   background-color: #F1F3CE;
   text-align: center;
-  width: 100px;
-  height: 50px;
+  width: 120px;
+  height: 60px;
+  font-size: 18px;
+  border-radius: 8px;
+  border-color: black;
+  margin: 0 30px;
+}
+
+button:hover {
+  background-color: black;
+  transition-duration: 0.5s;
+  color: white;
+}
+
+#button-container {
+  text-align: center;
 }
 
 #container {
