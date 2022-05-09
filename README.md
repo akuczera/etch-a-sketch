@@ -10,3 +10,5 @@ What I learned with this project:
 - Had to remember that the web page will render the CSS class that is closest to the bottom of the file.
 - Toggle a variable: https://www.codegrepper.com/code-examples/javascript/javascript+toggle+variable
 - Saw an idea for a "flag variable". https://stackoverflow.com/questions/36398974/keep-prompting-the-user-a-number-until-it-falls-into-a-certain-range
+- Found random RBG code here:
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events

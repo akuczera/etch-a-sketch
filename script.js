@@ -1,9 +1,8 @@
-
 var container = document.getElementById('container');
 var gridSize = 625;  //Auto grid size
 var root = document.querySelector(":root");
-let mousedown = false;
-let surprise = false;
+let mousedown;
+let surprise;
 
 //Build grid squares and append to container div.
 function buildGrid(x) {
@@ -13,6 +12,8 @@ container.replaceChildren();
     gridSquare.classList.add("gridSquare");
     container.appendChild(gridSquare);
   }
+  mousedown = false;
+  surprise = false;
   hover();
   mouseDown();
 }
