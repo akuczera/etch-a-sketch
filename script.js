@@ -73,18 +73,18 @@ let userInput;
 let isValid = false;
 
   do{
-    userInput = prompt("How many columns would you like? Enter 1 - 100");
+    userInput = prompt("How many columns would you like? Enter 1 - 64");
     if (userInput === null) break;
 
     userInput = parseInt(userInput);
-    isValid = userInput >= 1 && userInput <= 100;
+    isValid = userInput >= 1 && userInput <= 64;
     
   if (isValid) {
     gridSize = userInput * userInput;
     let percCalc = ((1/userInput) * 100) + '%';
     root.style.setProperty("--percent", percCalc);
   } else {
-    userInput = parseInt(prompt("Please try again. Enter 1 - 100"));
+    userInput = parseInt(prompt("Please try again. Enter 1 - 64"));
   }
 } while (!isValid);
   
